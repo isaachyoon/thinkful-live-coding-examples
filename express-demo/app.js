@@ -9,13 +9,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/sayHello', (req, res) => {
-  const name = req.query.name;
-  const job = req.query.job;
-
-  if (!name || !job) {
-    res.status(400).send('need more info')
-  }
-  res.status(202).end();
+  let arr = [1, 2, 3];
+  arr.forEach((num) => {
+    if (typeof num === 'number') {
+      res.send('hi')
+    }
+  })
 })
 
 app.get('/sayHello/name/:name', (req, res) => {
